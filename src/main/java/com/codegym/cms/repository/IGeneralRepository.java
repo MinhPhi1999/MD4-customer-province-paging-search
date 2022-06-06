@@ -1,0 +1,12 @@
+package com.codegym.cms.repository;
+
+import com.codegym.cms.model.Customer;
+
+import java.util.List;
+
+public interface IGeneralRepository<T> {
+    List<T> findAll();
+    void save(T t);
+    T findById(Long id);
+    void remove(Long id);
+}
