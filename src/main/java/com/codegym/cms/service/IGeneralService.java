@@ -1,10 +1,11 @@
 package com.codegym.cms.service;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IGeneralService<T> {
-    List<T> findAll();
+    Iterable<T> findAll();
     void save(T t);
     void remove(Long id);
-    T findById(Long id);
+    Optional<T> findById(Long id);
 }

@@ -1,6 +1,12 @@
 package com.codegym.cms.repository;
 
 import com.codegym.cms.model.Customer;
+import com.codegym.cms.model.Province;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ICustomerRepository extends IGeneralRepository<Customer>{
+@Repository
+//@Repo này để đánh dấu đây là tầng Repo thao tác vs csdl
+public interface ICustomerRepository extends PagingAndSortingRepository<Customer, Long> {
+    Iterable<Customer> findAllByProvince(Province province);
 }
